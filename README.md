@@ -9,6 +9,8 @@ You can log in as:
 - `user-1@example.com` // `asdfasdf`
 - `user-2@example.com` // `asdfasdf`
 
+NOTE: Password should already be present in form input for ease of logging in
+
 ## Steps to repro:
 
 1. Open two browser windows, one regular, one incognito (for sep. sessions)
