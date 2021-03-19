@@ -38,6 +38,8 @@ class ValidationReflex < ApplicationReflex
     Rails.logger.info "------------------------- #{connection.current_user.email}"
     Rails.logger.info "------------------------- VALIDATING..."
 
+    morph("#reflex-detail", "From Reflex: Logged In As: #{connection.current_user.email}")
+
     morph("#new-post",
       render(
         partial: "posts/form",

@@ -1,24 +1,20 @@
-# README
+# User Issue
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- `bundle install`
+- `rails db:create db:migrate db:seed`
+- Go to: [localhost:3000](http://localhost:3000)
 
-Things you may want to cover:
+You can log in as:
 
-* Ruby version
+- `user-1@example.com` // `asdfasdf`
+- `user-2@example.com` // `asdfasdf`
 
-* System dependencies
+## Steps to repro:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Open two browser windows, one regular, one incognito (for sep. sessions)
+2. Browser window 1: log in as user-1
+3. Browser window 2: log in as user-2
+4. Trigger a form reflex by editing user 1's post form title and losing input focus
+    - You'll see details on the page that show you who the logged in user is, from the perpective of the layout, the reflex, and the rendered form
+5. Trigger a form reflex by editing user 2's post form title and losing input focus
+    - You'll see that user-2 is who's logged in in the case of page layout, reflex, but the form render itself says "user-1"
