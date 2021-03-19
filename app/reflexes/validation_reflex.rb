@@ -34,10 +34,6 @@ class ValidationReflex < ApplicationReflex
   before_reflex :get_post
 
   def validate
-    Rails.logger.info "------------------------- VALIDATING..."
-    Rails.logger.info "------------------------- #{connection.current_user.email}"
-    Rails.logger.info "------------------------- VALIDATING..."
-
     morph("#reflex-detail", "From Reflex: Logged In As: #{connection.current_user.email}")
 
     morph("#new-post",
