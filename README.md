@@ -20,3 +20,8 @@ NOTE: Password should already be present in form input for ease of logging in
     - You'll see details on the page that show you who the logged in user is, from the perpective of the layout, the reflex, and the rendered form
 5. Trigger a form reflex by editing user 2's post form title and losing input focus
     - You'll see that user-2 is who's logged in in the case of page layout, reflex, but the form render itself says "user-1"
+
+
+https://user-images.githubusercontent.com/1141717/111829043-30442900-88ba-11eb-8dbb-2d027f51f71d.mp4
+
+
