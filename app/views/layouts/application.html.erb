@@ -4,6 +4,7 @@
     <title>ReflexSample</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= action_cable_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -12,7 +13,8 @@
   <body>
     <% if current_user %>
       <div>
-        Logged in as: <strong><%= current_user.email %></strong>
+        From Layout:
+        <%= current_user_information %>
       </div>
     <% end %>
 

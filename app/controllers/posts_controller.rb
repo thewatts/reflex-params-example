@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   def new
     @post ||= Post.new(post_params)
     @post.validate
+
+    @count = session[:count].to_i
   end
 
   private
