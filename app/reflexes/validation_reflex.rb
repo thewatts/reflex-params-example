@@ -36,13 +36,13 @@ class ValidationReflex < ApplicationReflex
   def validate
     morph("#reflex-detail", "From Reflex: Logged In As: #{connection.current_user.email}")
 
-    morph("#new-post",
-      render(
-        partial: "posts/form",
-        locals: {
-          post: @post
-        }
-      )
+    @post.validate
+
+    morph("#new-post", render(
+      partial: "posts/form",
+      locals: {
+        post: @post
+      })
     )
   end
 
