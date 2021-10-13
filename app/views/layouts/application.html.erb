@@ -11,13 +11,6 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <div>
-        From Layout:
-        <%= current_user_information %>
-      </div>
-    <% end %>
-
     <%= yield %>
   </body>
 </html>

@@ -1,16 +1,32 @@
 class PostsController < ApplicationController
   def new
-    @post ||= Post.new(post_params)
-    @post.validate
+    @post = Post.new
+  end
 
-    @count = session[:count].to_i
+  def create
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
+    Rails.logger.info "PARAMS FROM CONTROLLER: #{post_params}"
   end
 
   private
 
   def post_params
-    return {} unless params.key?(:user)
-
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, test: [])
   end
 end
