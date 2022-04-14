@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: "posts#new"
+  resources :events
+  root to: "events#new"
 
-  resources :posts, only: [:new, :create]
+  resources :events, only: [:new, :create]
 end
