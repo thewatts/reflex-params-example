@@ -1,0 +1,27 @@
+<%= form_with(model: event, local: true, id: dom_id(event)) do |form| %>
+  <% if event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: "my-event-title-#{Time.current.to_i}", data: { reflex: "change->Validation#validate", reflex_permanent: true } %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_field :date, id: "my-event-date-#{Time.current.to_i}", data: { reflex: "change->Validation#validate" } %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit disabled: !event.valid? %>
+  </div>
+<% end %>
